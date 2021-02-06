@@ -1,6 +1,7 @@
 import Human_Character
 import Battle
 from Game_States import GAME_OVER, CHOOSING_PATH, IN_BATTLE, SHOPPING
+from GraveStone import displayGrave
 
 battle_station = Battle.Battle()
 
@@ -20,3 +21,5 @@ while(game_status != GAME_OVER):
     elif choice == 's':
         # Shopping
         game_status = SHOPPING
+
+displayGrave()

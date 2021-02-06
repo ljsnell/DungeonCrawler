@@ -1,4 +1,4 @@
-from Game_States import IN_BATTLE, CHOOSING_PATH, GAME_OVER
+from Game_States import IN_BATTLE, CHOOSING_PATH, GAME_OVER, DELIMITER
 import os
 import random
 
@@ -8,7 +8,7 @@ class Battle:
 
     def combat(self, enemy_character, player_character, game_status):
         while game_status == IN_BATTLE:
-            print('**************************')
+            print(DELIMITER)
             # Battle
             os.system('cls' if os.name == 'nt' else 'clear')
 

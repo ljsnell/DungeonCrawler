@@ -47,7 +47,7 @@ class HumanCharacter:
     def display_defeat(self):
         print(DELIMITER)
         print('NAME: ' + self.name)
-        print('   ____\ x  x \____')
+        print(r'   ____\ x  x \____')
         print('  / ' + f"{self.l_arm:02d}" + '/|  ' +
               f"{self.chest:02d}" + '  |\\ ' + f"{self.r_arm:02d}" + '\\')
         print(' /   / |      | \\   \\')
