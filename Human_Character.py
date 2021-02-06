@@ -1,6 +1,7 @@
 class HumanCharacter:
 
-    def __init__(self, left_arm, chest, right_arm, damage):
+    def __init__(self, name, left_arm, chest, right_arm, damage):
+        self.name = name
         self.r_arm = right_arm
         self.chest = chest
         self.l_arm = left_arm
@@ -32,7 +33,16 @@ class HumanCharacter:
 
     def display(self):
         print('**************************')
-        print('   ____        ____')
+        print('NAME: ' + self.name)
+        print('   ____{ O  O }____')
+        print('  / ' + f"{self.l_arm:02d}" + '/|  ' + f"{self.chest:02d}" + '  |\\ ' + f"{self.r_arm:02d}" + '\\')
+        print(' /   / |      | \\   \\')
+        print('**************************')
+
+    def display_defeat(self):
+        print('**************************')
+        print('NAME: ' + self.name)
+        print('   ____\ x  x \____')
         print('  / ' + f"{self.l_arm:02d}" + '/|  ' + f"{self.chest:02d}" + '  |\\ ' + f"{self.r_arm:02d}" + '\\')
         print(' /   / |      | \\   \\')
         print('**************************')

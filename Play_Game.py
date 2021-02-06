@@ -3,8 +3,8 @@ import Human_Character
 import random
 import os
 
-enemy_character = Human_Character.HumanCharacter(5, 10, 5, 3)
-player_character = Human_Character.HumanCharacter(7, 10, 7, 2)
+enemy_character = Human_Character.HumanCharacter("Evil Harold", 5, 10, 5, 3)
+player_character = Human_Character.HumanCharacter("Harold", 7, 10, 7, 2)
 
 game_loop = 1
 options = ['ra', 'c', 'la']
@@ -26,7 +26,7 @@ while(game_loop == 1):
         game_loop = 0
         os.system('cls' if os.name == 'nt' else 'clear')
         print('Victory!')
-        enemy_character.display()
+        enemy_character.display_defeat()
         player_character.display()
 
     if (enemy_character.is_alive() == False) and (game_loop == 1):
@@ -34,4 +34,4 @@ while(game_loop == 1):
         os.system('cls' if os.name == 'nt' else 'clear')
         print('Gruesome Defeat')
         enemy_character.display()
-        player_character.display()
+        player_character.display_defeat()
