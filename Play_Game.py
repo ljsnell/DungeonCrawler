@@ -10,7 +10,8 @@ game_loop = 1
 options = ['ra', 'c', 'la']
 
 print('**************************')
-while(game_loop == 1):
+while(game_loop != 0):
+    # Battle
     os.system('cls' if os.name == 'nt' else 'clear')
 
     enemy_character.display()
@@ -29,9 +30,12 @@ while(game_loop == 1):
         enemy_character.display_defeat()
         player_character.display()
 
-    if (enemy_character.is_alive() == False) and (game_loop == 1):
+    if (player_character.is_alive() == False):
         game_loop = 0
         os.system('cls' if os.name == 'nt' else 'clear')
         print('Gruesome Defeat')
         enemy_character.display()
         player_character.display_defeat()
+
+# Shopping
+

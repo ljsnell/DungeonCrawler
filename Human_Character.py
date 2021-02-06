@@ -34,9 +34,9 @@ class HumanCharacter:
     def display(self):
         print('**************************')
         print('NAME: ' + self.name)
-        print('   ____{ O  O }____')
-        print('  / ' + f"{self.l_arm:02d}" + '/|  ' + f"{self.chest:02d}" + '  |\\ ' + f"{self.r_arm:02d}" + '\\')
-        print(' /   / |      | \\   \\')
+        print('   ________ { O  O } ________')
+        print('  / la: ' + f"{self.l_arm:02d}" + '/|  c:' + f"{self.chest:02d}" + '  |\\ ra: ' + f"{self.r_arm:02d}" + '\\')
+        print(' /       / |        | \\       \\')
         print('**************************')
 
     def display_defeat(self):
@@ -44,5 +44,5 @@ class HumanCharacter:
         print('NAME: ' + self.name)
         print('   ____\ x  x \____')
         print('  / ' + f"{self.l_arm:02d}" + '/|  ' + f"{self.chest:02d}" + '  |\\ ' + f"{self.r_arm:02d}" + '\\')
-        print(' /   / |      | \\   \\')
+        print(' /   / |        |   \\       \\')
         print('**************************')
