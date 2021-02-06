@@ -21,18 +21,25 @@ game_status = CHOOSING_PATH
 
 while(game_status != GAME_OVER):
     print('Current Gold: ' + str(player_character.gold))
-    choice = input('Enter Battle (b), or Shopping (s)').lower()
+    choice = input('Enter Battle (b), or Shopping (s): ').lower()
     if choice == 'b':
         # Battle
         game_status = IN_BATTLE
         game_status, player_character = battle_station.combat(
             enemy_character, player_character, game_status)
-    elif choice == 's':        
+    elif choice == 's':
         # Shopping
         game_status = SHOPPING
+
+        # Show Wares
         for (index, weapon) in enumerate(weapon_list):
             print(index+1)
             weapon.display()
 
+        selection = input(
+            "What item # would you like to buy? 'n' for no purchase: ")
+        item = weapon_list[int(selection)-1]
+
+        item.display()
 
 displayGrave()
