@@ -1,11 +1,15 @@
+from Game_States import DELIMITER
+
+
 class HumanCharacter:
 
-    def __init__(self, name, left_arm, chest, right_arm, damage):
+    def __init__(self, name, left_arm, chest, right_arm, damage, gold):
         self.name = name
         self.r_arm = right_arm
         self.chest = chest
         self.l_arm = left_arm
         self.damage = damage
+        self.gold = gold
 
     def determine_damage(self, hit_location, damage):
         if hit_location == 'ra':
@@ -32,17 +36,19 @@ class HumanCharacter:
             return False
 
     def display(self):
-        print('**************************')
+        print(DELIMITER)
         print('NAME: ' + self.name)
         print('   ________ { O  O } ________')
-        print('  / la: ' + f"{self.l_arm:02d}" + '/|  c:' + f"{self.chest:02d}" + '  |\\ ra: ' + f"{self.r_arm:02d}" + '\\')
+        print('  / la: ' + f"{self.l_arm:02d}" + '/|  c:' +
+              f"{self.chest:02d}" + '  |\\ ra: ' + f"{self.r_arm:02d}" + '\\')
         print(' /       / |        | \\       \\')
-        print('**************************')
+        print(DELIMITER)
 
     def display_defeat(self):
-        print('**************************')
+        print(DELIMITER)
         print('NAME: ' + self.name)
         print('   ____\ x  x \____')
-        print('  / ' + f"{self.l_arm:02d}" + '/|  ' + f"{self.chest:02d}" + '  |\\ ' + f"{self.r_arm:02d}" + '\\')
+        print('  / ' + f"{self.l_arm:02d}" + '/|  ' +
+              f"{self.chest:02d}" + '  |\\ ' + f"{self.r_arm:02d}" + '\\')
         print(' /   / |      | \\   \\')
-        print('**************************')
+        print(DELIMITER)
