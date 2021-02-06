@@ -12,6 +12,11 @@ class BatCharacter:
     def display(self):
         print('**************************')
         print('NAME: ' + self.name)
-        print('   v^( c:' + str(self.chest) + ' )^v' )
+        print('   \/( c:' + str(self.chest) + ' )\/' )
+        print('**************************')
 
-    # def display_defeat(self):
+    def display_defeat(self):
+        print('**************************')
+        print('NAME: ' + self.name)
+        print('   /*( c:' + str(self.chest) + ' )*\\' )
+        print('**************************')
