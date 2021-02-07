@@ -19,9 +19,9 @@ class Battle:
 
             # Calculate Damage & HP
             enemy_character.determine_damage(
-                target_location, player_character.damage)
+                target_location, player_character.items[0].damage)
             player_character.determine_damage(
-                random.choice(self.options), enemy_character.damage)
+                random.choice(self.options), enemy_character.items[0].damage)
 
             if (enemy_character.is_alive() == False) and (player_character.is_alive() == True):
                 game_loop = CHOOSING_PATH

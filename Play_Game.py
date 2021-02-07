@@ -5,9 +5,9 @@ from Game_States import GAME_OVER, CHOOSING_PATH, IN_BATTLE, SHOPPING
 from GraveStone import displayGrave
 
 battle_station = Battle.Battle()
-smol_sword = Item.Item('smol sword', 5, [], 9)
+smol_sword = Item.Item('smol sword', 3, [], 9)
 medium_sword = Item.Item('medium sword', 5, [], 9)
-htb_sword = Item.Item("'Honestly too big' sword", 5, [], 9)
+htb_sword = Item.Item("'Honestly too big' sword", 9, [], 9)
 
 weapon_list = []
 weapon_list.append(smol_sword)
@@ -58,4 +58,5 @@ while(game_status != GAME_OVER):
         print('Current inventory: ')
         for item in player_character.items:
             item.display()
+
 displayGrave()
