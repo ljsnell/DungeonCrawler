@@ -52,7 +52,7 @@ while(game_status != GAME_OVER):
             player_character.gold = new_gold_amount
             print('Purchased!')
             item.display()
-            player_character.items.append(item)
+            player_character.items.insert(0, item)
     elif choice == 'i':
         # Inventory
         print('Current inventory: ')
