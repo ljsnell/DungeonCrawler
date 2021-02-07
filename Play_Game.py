@@ -14,8 +14,10 @@ weapon_list.append(smol_sword)
 weapon_list.append(medium_sword)
 weapon_list.append(htb_sword)
 
-enemy_character = Human_Character.HumanCharacter("Evil Harold", 5, 10, 5, 3, 9)
-player_character = Human_Character.HumanCharacter("Harold", 7, 10, 7, 2, 11)
+enemy_character = Human_Character.HumanCharacter(
+    "Evil Harold", 5, 10, 5, 3, 9, [smol_sword])
+player_character = Human_Character.HumanCharacter(
+    "Harold", 7, 10, 7, 2, 11, [medium_sword])
 
 game_status = CHOOSING_PATH
 
