@@ -3,13 +3,14 @@ from Game_States import DELIMITER
 
 class HumanCharacter:
 
-    def __init__(self, name, left_arm, chest, right_arm, damage, gold):
+    def __init__(self, name, left_arm, chest, right_arm, damage, gold, items=[]):
         self.name = name
         self.r_arm = right_arm
         self.chest = chest
         self.l_arm = left_arm
         self.damage = damage
         self.gold = gold
+        self.items = items
 
     def determine_damage(self, hit_location, damage):
         if hit_location == 'ra':
