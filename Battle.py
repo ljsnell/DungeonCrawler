@@ -1,6 +1,6 @@
 from Game_States import IN_BATTLE, CHOOSING_PATH, GAME_OVER, DELIMITER
-import os
 import random
+from Clear_Screen import clear_display
 
 
 class Battle:
@@ -10,7 +10,7 @@ class Battle:
         while game_status == IN_BATTLE:
             print(DELIMITER)
             # Battle
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_display()
 
             enemy_character.display()
             player_character.display()
@@ -25,7 +25,7 @@ class Battle:
 
             if (enemy_character.is_alive() == False) and (player_character.is_alive() == True):
                 game_loop = CHOOSING_PATH
-                os.system('cls' if os.name == 'nt' else 'clear')
+                clear_display()
                 print('Victory!')
                 enemy_character.display_defeat()
                 player_character.display()
@@ -34,7 +34,7 @@ class Battle:
 
             if (player_character.is_alive() == False):
                 game_loop = GAME_OVER
-                os.system('cls' if os.name == 'nt' else 'clear')
+                clear_display()
                 print('Gruesome Defeat')
                 enemy_character.display()
                 player_character.display_defeat()

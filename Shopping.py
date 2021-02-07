@@ -1,22 +1,16 @@
 from Game_States import SHOPPING
 import Item
-
-smol_sword = Item.Item('smol sword', 3, [], 9)
-medium_sword = Item.Item('medium sword', 5, [], 9)
-htb_sword = Item.Item("'Honestly too big' sword", 9, [], 9)
-
-weapon_list = []
-weapon_list.append(smol_sword)
-weapon_list.append(medium_sword)
-weapon_list.append(htb_sword)
+from Item_List import TIER_ONE_ITEMS
+from Clear_Screen import clear_display
 
 
 class Shopping:
     # Show Wares
     def shop(self, game_status, player_character):
+        clear_display()
         while game_status == SHOPPING:
             print('*** Items for sale: ***')
-            for (index, weapon) in enumerate(weapon_list):
+            for (index, weapon) in enumerate(TIER_ONE_ITEMS):
                 print(index+1)
                 weapon.display()
 
@@ -26,7 +20,7 @@ class Shopping:
             new_gold_amount = -1
 
             if selection.isnumeric():
-                item = weapon_list[int(selection)-1]
+                item = TIER_ONE_ITEMS[int(selection)-1]
                 new_gold_amount = player_character.gold - item.cost
 
             if new_gold_amount > -1:
