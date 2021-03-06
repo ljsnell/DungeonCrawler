@@ -4,12 +4,14 @@ import Item
 import Shopping
 from Game_States import GAME_OVER, CHOOSING_PATH, IN_BATTLE, SHOPPING
 from GraveStone import displayGrave
+from Bestiary import returnEnemyByTier
 
 shopping_station = Shopping.Shopping()
 battle_station = Battle.Battle()
 smol_sword = Item.Item('smol sword', 3, [], 9)
 medium_sword = Item.Item('medium sword', 5, [], 9)
 htb_sword = Item.Item("'Honestly too big' sword", 9, [], 9)
+
 
 enemy_character = Human_Character.HumanCharacter(
     "Evil Harold", 5, 10, 5, 3, 9, [smol_sword])
@@ -25,6 +27,8 @@ while(game_status != GAME_OVER):
     if choice == 'b':
         # Battle
         game_status = IN_BATTLE
+        # returnEnemyByTier
+        enemy_character = returnEnemyByTier(1)
         game_status, player_character = battle_station.combat(
             enemy_character, player_character, game_status)
     elif choice == 's':
