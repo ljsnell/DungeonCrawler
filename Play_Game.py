@@ -12,9 +12,10 @@ smol_sword = Item.Item('smol sword', 3, [], 9)
 medium_sword = Item.Item('medium sword', 5, [], 9)
 htb_sword = Item.Item("'Honestly too big' sword", 9, [], 9)
 
+player_name = input('Enter Character Name: ')
 
 player_character = Human_Character.HumanCharacter(
-    "Harold", 7, 10, 7, 2, 11, 0, [medium_sword])
+    player_name, 7, 10, 7, 2, 11, 0, [medium_sword])
 
 game_status = CHOOSING_PATH
 
