@@ -5,6 +5,7 @@ import random
 
 Evil_Harold = Human_Character.HumanCharacter(
     "Evil Harold", 5, 10, 5, 3, 9, [SMOL_SWORD])
+Evil_Harold.exp = 8
 
 Bat = Bat_Character.BatCharacter(3)
 

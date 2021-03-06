@@ -13,8 +13,6 @@ medium_sword = Item.Item('medium sword', 5, [], 9)
 htb_sword = Item.Item("'Honestly too big' sword", 9, [], 9)
 
 
-enemy_character = Human_Character.HumanCharacter(
-    "Evil Harold", 5, 10, 5, 3, 9, [smol_sword])
 player_character = Human_Character.HumanCharacter(
     "Harold", 7, 10, 7, 2, 11, [medium_sword])
 
@@ -22,6 +20,7 @@ game_status = CHOOSING_PATH
 
 while(game_status != GAME_OVER):
     print('Current Gold: ' + str(player_character.gold))
+    print('Current Exp: ' + str(player_character.exp))
     choice = input(
         'Enter Battle (b), Shopping (s), or Inventory (i): ').lower()
     if choice == 'b':
