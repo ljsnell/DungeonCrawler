@@ -3,17 +3,21 @@ import Human_Character
 import Bat_Character
 import random
 
-Evil_Harold = Human_Character.HumanCharacter(
-    "Evil Harold", 5, 10, 5, 3, 9, [SMOL_SWORD])
-Evil_Harold.exp = 8
 
-Bat = Bat_Character.BatCharacter(3)
+def createEnemyList():
+    Evil_Harold = Human_Character.HumanCharacter(
+        "Evil Harold", 5, 10, 5, 3, 9, 8, [SMOL_SWORD])
 
-TIER_ONE_ENEMIES = [Bat, Evil_Harold]
+    Bat = Bat_Character.BatCharacter(3)
+
+    tier_one_enemies = [Bat, Evil_Harold]
+    return tier_one_enemies
 
 
 def returnEnemyByTier(pc_level):
+    tier_one_enemies = createEnemyList()
+
     if pc_level == 1:
-        return random.choice(TIER_ONE_ENEMIES)
+        return random.choice(tier_one_enemies)
     else:
         return

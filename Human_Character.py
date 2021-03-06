@@ -3,7 +3,7 @@ from Game_States import DELIMITER
 
 class HumanCharacter:
 
-    def __init__(self, name, left_arm, chest, right_arm, damage, gold, items=[]):
+    def __init__(self, name, left_arm, chest, right_arm, damage, gold, exp, items=[]):
         self.name = name
         self.r_arm = right_arm
         self.chest = chest

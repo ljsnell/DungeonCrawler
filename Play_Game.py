@@ -14,7 +14,7 @@ htb_sword = Item.Item("'Honestly too big' sword", 9, [], 9)
 
 
 player_character = Human_Character.HumanCharacter(
-    "Harold", 7, 10, 7, 2, 11, [medium_sword])
+    "Harold", 7, 10, 7, 2, 11, 0, [medium_sword])
 
 game_status = CHOOSING_PATH
 
