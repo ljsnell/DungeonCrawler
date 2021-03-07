@@ -45,12 +45,12 @@ while(game_status != GAME_OVER):
     elif choice == 'sg':
         # Save Game
         # Pickle player character
-        with open('player.pkl', 'wb') as output:
+        with open(player_character.name + '.pkl', 'wb') as output:
             pickle.dump(player_character, output, pickle.HIGHEST_PROTOCOL)
         print('Game saved successfully!')
     elif choice == 'lg':
         # Load Game
-        with open('player.pkl', 'rb') as player_pickle:
+        with open(player_character.name + '.pkl', 'rb') as player_pickle:
             player_character = pickle.load(player_pickle)
             print(player_character.name)
 
