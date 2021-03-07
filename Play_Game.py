@@ -5,6 +5,7 @@ import Shopping
 from Game_States import GAME_OVER, CHOOSING_PATH, IN_BATTLE, SHOPPING
 from GraveStone import displayGrave
 from Bestiary import returnEnemyByTier
+import pickle
 
 shopping_station = Shopping.Shopping()
 battle_station = Battle.Battle()
@@ -23,7 +24,7 @@ while(game_status != GAME_OVER):
     print('Current Gold: ' + str(player_character.gold))
     print('Current Exp: ' + str(player_character.exp))
     choice = input(
-        'Enter Battle (b), Shopping (s), or Inventory (i): ').lower()
+        'Enter Battle (b), Shopping (s), Save (sg), Load (lg) or Inventory (i): ').lower()
     if choice == 'b':
         # Battle
         game_status = IN_BATTLE
@@ -41,5 +42,16 @@ while(game_status != GAME_OVER):
         print('Current inventory: ')
         for item in player_character.items:
             item.display()
+    elif choice == 'sg':
+        # Save Game
+        # Pickle player character
+        with open('player.pkl', 'wb') as output:
+            pickle.dump(player_character, output, pickle.HIGHEST_PROTOCOL)
+        print('Game saved successfully!')
+    elif choice == 'lg':
+        # Load Game
+        with open('player.pkl', 'rb') as player_pickle:
+            player_character = pickle.load(player_pickle)
+            print(player_character.name)
 
 displayGrave()
