@@ -35,11 +35,17 @@ class RatCharacter:
         print('**************************')
 
     def determine_damage(self, hit_location, damage):
-        if hit_location == 'h':
+        hit_landed = True
+        if self.tail > 0:
+            hit = random.randint(0, 3)
+            if hit == 0:
+                hit_landed = False
+                print('Attack Dodged by ' + self.name + '!')
+        if hit_location == 'h' and hit_landed:
             self.head -= damage
-        elif hit_location == 'c':
+        elif hit_location == 'c' and hit_landed:
             self.chest -= damage
-        elif hit_location == 't':
+        elif hit_location == 't' and hit_landed:
             self.tail -= damage
 
     def is_alive(self):

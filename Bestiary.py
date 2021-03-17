@@ -1,6 +1,7 @@
 from Item_List import *
 import Human_Character
 import Bat_Character
+import Rat_Character
 import random
 
 
@@ -9,8 +10,9 @@ def createEnemyList():
         "Evil Harold", 5, 10, 5, 3, 9, 8, [SMOL_SWORD])
 
     Bat = Bat_Character.BatCharacter(3)
+    Rat = Rat_Character.RatCharacter(3, 5, 1)
 
-    tier_one_enemies = [Bat, Evil_Harold]
+    tier_one_enemies = [Bat, Evil_Harold, Rat]
     return tier_one_enemies
 
 
