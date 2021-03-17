@@ -27,18 +27,24 @@ class RatCharacter:
     def display_defeat(self):
         print('**************************')
         print('NAME: ' + self.name)
-        print('   ()---().----.          .')
+        print('   @--x-@ .--x-.          ')
         print(r'    \h:' + str(self.head) + '/  c:' +
-              str(self.chest) + '  ;     t:' + str(self.tail) + '  .')
-        print(r'     \ /\ ___  ;________.')
+              str(self.chest) + ' x;     t:' + str(self.tail))
+        print(r'     \x/\ x__  ;______.')
         print(r'      ` ^^   ^^')
         print('**************************')
 
     def determine_damage(self, hit_location, damage):
-        self.chest -= damage
+        if hit_location == 'h':
+            self.head -= damage
+        elif hit_location == 'c':
+            self.chest -= damage
+        elif hit_location == 't':
+            self.tail -= damage
 
     def is_alive(self):
-        if(self.chest > 0):
+        lowest_hp_value = sorted([self.head, self.chest, self.tail])[0]
+        if(lowest_hp_value > 0):
             return True
         else:
             return False
