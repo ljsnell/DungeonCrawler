@@ -1,6 +1,6 @@
-from Game_States import IN_BATTLE, CHOOSING_PATH, GAME_OVER, DELIMITER
+from constants.Game_States import IN_BATTLE, CHOOSING_PATH, GAME_OVER, DELIMITER
 import random
-from Clear_Screen import clear_display
+from display_utilities.Clear_Screen import clear_display
 
 
 class Battle:

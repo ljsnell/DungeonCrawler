@@ -1,4 +1,4 @@
-from Game_States import DELIMITER
+from constants.Game_States import DELIMITER
 
 
 class HumanCharacter:
