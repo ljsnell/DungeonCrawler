@@ -11,7 +11,7 @@ class HumanCharacter:
         self.damage = damage
         self.gold = gold
         self.items = items
-        self.exp = 0
+        self.exp = exp
         self.level = 1
 
     def determine_damage(self, hit_location, damage):

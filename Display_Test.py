@@ -1,6 +1,6 @@
-import Bat_Character
+from characters import Rat_Character
 
-batChar = Bat_Character.BatCharacter(4)
+batChar = Rat_Character.RatCharacter(4, 5, 1)
 
 batChar.display()
 batChar.display_defeat()

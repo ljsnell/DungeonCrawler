@@ -1,4 +1,4 @@
-import Human_Character
+from characters import Human_Character
 import Battle
 import Item
 import Shopping
