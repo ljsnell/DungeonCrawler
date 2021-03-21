@@ -1,7 +1,7 @@
 from Item_List import *
-import Human_Character
-import Bat_Character
-import Rat_Character
+from characters import Human_Character
+from characters import Bat_Character
+from characters import Rat_Character
 import random
 
 

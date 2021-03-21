@@ -1,9 +1,9 @@
-import Human_Character
+from characters import Human_Character
 import Battle
 import Item
 import Shopping
-from Game_States import GAME_OVER, CHOOSING_PATH, IN_BATTLE, SHOPPING
-from GraveStone import displayGrave
+from constants.Game_States import GAME_OVER, CHOOSING_PATH, IN_BATTLE, SHOPPING
+from display_utilities.GraveStone import displayGrave
 from Bestiary import returnEnemyByTier
 import pickle
 

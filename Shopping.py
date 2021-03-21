@@ -1,7 +1,7 @@
-from Game_States import SHOPPING
+from constants.Game_States import SHOPPING
 import Item
 from Item_List import TIER_ONE_ITEMS
-from Clear_Screen import clear_display
+from display_utilities.Clear_Screen import clear_display
 
 
 class Shopping:
