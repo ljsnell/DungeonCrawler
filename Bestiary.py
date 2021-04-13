@@ -14,7 +14,7 @@ def createEnemyList():
     Rat = Rat_Character.RatCharacter(3, 5, 1)
     Spider = Spider_Character.SpiderCharacter(2)
 
-    tier_one_enemies = [Spider]
+    tier_one_enemies = [Bat, Evil_Harold, Rat, Spider]
 
     return tier_one_enemies
 
