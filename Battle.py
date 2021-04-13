@@ -23,7 +23,8 @@ class Battle:
             player_character.determine_damage(
                 random.choice(self.options), enemy_character)
 
-            if (enemy_character.is_alive() == False) and (player_character.is_alive() == True):
+            if (enemy_character.is_alive() == False) and \
+                    (player_character.is_alive() == True):
                 game_loop = CHOOSING_PATH
                 clear_display()
                 print('Victory!')
