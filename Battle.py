@@ -46,7 +46,6 @@ class Battle:
                 return game_loop, player_character
 
     def check_status_effects(self, status_effects):
-        print('status_effects:', status_effects)
         # Slow
         if (any(effect['name'] == "slow" for effect in status_effects)):
             print('status slow')
