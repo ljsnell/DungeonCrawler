@@ -10,6 +10,7 @@ class SpiderCharacter:
         self.chest = chest
         self.exp = 5
         self.damage = 3
+        self.effects = [{'name': 'slow', 'hit_percent': 25}]
         self.gold = 4
 
     def display(self):

@@ -1,4 +1,5 @@
 from constants.Game_States import DELIMITER
+import random
 
 
 class HumanCharacter:
@@ -13,14 +14,23 @@ class HumanCharacter:
         self.items = items
         self.exp = exp
         self.level = 1
+        self.status_effects = []
 
-    def determine_damage(self, hit_location, damage):
+    def determine_damage(self, hit_location, enemy_character):
+        damage = enemy_character.damage
         if hit_location == 'ra':
             self.r_arm_hit(damage)
         elif hit_location == 'c':
             self.c_hit(damage)
         elif hit_location == 'la':
             self.l_arm_hit(damage)
+
+        # Determine if status effect is applied
+        if hasattr(enemy_character, 'effects'):
+            for effect in enemy_character.effects:
+                if (effect['hit_percent'] > random.randint(1, 100))\
+                        and (effect['name'] not in self.status_effects):
+                    self.status_effects.append(effect['name'])
 
     def r_arm_hit(self, damage):
         self.r_arm -= damage
@@ -45,6 +55,7 @@ class HumanCharacter:
         print('  / la: ' + f"{self.l_arm:02d}" + '/|  c:' +
               f"{self.chest:02d}" + '  |\\ ra: ' + f"{self.r_arm:02d}" + '\\')
         print(' /       / |        | \\       \\')
+        print('Status Effects: ' + str(self.status_effects))
         print(DELIMITER)
 
     def display_defeat(self):
