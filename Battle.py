@@ -10,7 +10,7 @@ class Battle:
         while game_status == IN_BATTLE:
             print(DELIMITER)
             # Battle
-            clear_display()
+            # clear_display()
 
             enemy_character.display()
             player_character.display()
@@ -21,7 +21,10 @@ class Battle:
             enemy_character.determine_damage(
                 target_location, player_character.items[0].damage)
             player_character.determine_damage(
-                random.choice(self.options), enemy_character)
+                random.choice(self.options), enemy_character.damage, enemy_character.damaging_effects)
+
+            # Calculate Status Effects
+            self.check_status_effects(player_character.status_effects)
 
             if (enemy_character.is_alive() == False) and \
                     (player_character.is_alive() == True):
@@ -41,3 +44,9 @@ class Battle:
                 enemy_character.display()
                 player_character.display_defeat()
                 return game_loop, player_character
+
+    def check_status_effects(self, status_effects):
+        print('status_effects:', status_effects)
+        # Slow
+        if (any(effect['name'] == "slow" for effect in status_effects)):
+            print('status slow')

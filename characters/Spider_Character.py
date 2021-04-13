@@ -1,4 +1,5 @@
 import random
+from characters.Effects import SLOW
 
 
 class SpiderCharacter:
@@ -10,7 +11,7 @@ class SpiderCharacter:
         self.chest = chest
         self.exp = 5
         self.damage = 3
-        self.effects = [{'name': 'slow', 'hit_percent': 25}]
+        self.damaging_effects = [SLOW]
         self.gold = 4
 
     def display(self):

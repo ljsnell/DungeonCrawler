@@ -16,8 +16,7 @@ class HumanCharacter:
         self.level = 1
         self.status_effects = []
 
-    def determine_damage(self, hit_location, enemy_character):
-        damage = enemy_character.damage
+    def determine_damage(self, hit_location, damage, effects=[]):
         if hit_location == 'ra':
             self.r_arm_hit(damage)
         elif hit_location == 'c':
@@ -26,11 +25,11 @@ class HumanCharacter:
             self.l_arm_hit(damage)
 
         # Determine if status effect is applied
-        if hasattr(enemy_character, 'effects'):
-            for effect in enemy_character.effects:
+        if len(effects) > 0:
+            for effect in effects:
                 if (effect['hit_percent'] > random.randint(1, 100))\
-                        and (effect['name'] not in self.status_effects):
-                    self.status_effects.append(effect['name'])
+                        and (effect not in self.status_effects):
+                    self.status_effects.append(effect)
 
     def r_arm_hit(self, damage):
         self.r_arm -= damage
