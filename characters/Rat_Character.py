@@ -13,6 +13,7 @@ class RatCharacter:
         self.exp = 7
         self.damage = 2
         self.gold = 4
+        self.damaging_effects = []
 
     def display(self):
         print('**************************')

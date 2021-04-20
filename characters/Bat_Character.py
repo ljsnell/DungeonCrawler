@@ -11,6 +11,7 @@ class BatCharacter:
         self.exp = 5
         self.damage = 3
         self.gold = 4
+        self.damaging_effects = []
 
     def display(self):
         print('**************************')

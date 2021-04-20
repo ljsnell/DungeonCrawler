@@ -17,14 +17,18 @@ class Battle:
 
             target_location = input('Select Target Location: ')
 
+            # Calculate Status Effects
+            procced_effects = self.check_status_effects(
+                player_character.status_effects)
             # Calculate Damage & HP
-            enemy_character.determine_damage(
-                target_location, player_character.items[0].damage)
+            if ("slow" in procced_effects):
+                print('Character was slowed and cannot attack this round')
+            else:
+                enemy_character.determine_damage(
+                    target_location, player_character.items[0].damage)
+
             player_character.determine_damage(
                 random.choice(self.options), enemy_character.damage, enemy_character.damaging_effects)
-
-            # Calculate Status Effects
-            self.check_status_effects(player_character.status_effects)
 
             if (enemy_character.is_alive() == False) and \
                     (player_character.is_alive() == True):
@@ -47,5 +51,9 @@ class Battle:
 
     def check_status_effects(self, status_effects):
         # Slow
-        if (any(effect['name'] == "slow" for effect in status_effects)):
-            print('status slow')
+        procced_effects = []
+        for effect in status_effects:
+            if effect['proc_chance'] > random.randint(1, 100):
+                print(effect['name'])
+                procced_effects.append(effect['name'])
+        return procced_effects

@@ -15,6 +15,7 @@ class HumanCharacter:
         self.exp = exp
         self.level = 1
         self.status_effects = []
+        self.damaging_effects = []
 
     def determine_damage(self, hit_location, damage, effects=[]):
         if hit_location == 'ra':
