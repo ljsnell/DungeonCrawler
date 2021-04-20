@@ -1,28 +1,29 @@
 import random
+from characters.Effects import SLOW
 
 
-class BatCharacter:
-    bat_names = ['Hairy', "Bloodsucking", "Sleepy"]
-    bat_name = random.choice(bat_names)
+class SpiderCharacter:
+    spider_names = ['Baleful', "Steeple-Legged", "Glistening"]
+    spider_name = random.choice(spider_names)
 
     def __init__(self, chest):
-        self.name = self.bat_name + ' Bat'
+        self.name = self.spider_name + ' Spider'
         self.chest = chest
         self.exp = 5
         self.damage = 3
+        self.damaging_effects = [SLOW]
         self.gold = 4
-        self.damaging_effects = []
 
     def display(self):
         print('**************************')
         print('NAME: ' + self.name)
-        print(r'   \/( c:' + str(self.chest) + r' )\/')
+        print(r'   /\(0 c:' + str(self.chest) + ' 0)/\\')
         print('**************************')
 
     def display_defeat(self):
         print('**************************')
         print('NAME: ' + self.name)
-        print('   /*( c:' + str(self.chest) + ' )*\\')
+        print('   __/(0 c:' + str(self.chest) + ' 0)\\__')
         print('**************************')
 
     def determine_damage(self, hit_location, damage):

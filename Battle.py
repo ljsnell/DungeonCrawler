@@ -10,20 +10,28 @@ class Battle:
         while game_status == IN_BATTLE:
             print(DELIMITER)
             # Battle
-            clear_display()
+            # clear_display()
 
             enemy_character.display()
             player_character.display()
 
             target_location = input('Select Target Location: ')
 
+            # Calculate Status Effects
+            procced_effects = self.check_status_effects(
+                player_character.status_effects)
             # Calculate Damage & HP
-            enemy_character.determine_damage(
-                target_location, player_character.items[0].damage)
-            player_character.determine_damage(
-                random.choice(self.options), enemy_character.damage)
+            if ("slow" in procced_effects):
+                print('Character was slowed and cannot attack this round')
+            else:
+                enemy_character.determine_damage(
+                    target_location, player_character.items[0].damage)
 
-            if (enemy_character.is_alive() == False) and (player_character.is_alive() == True):
+            player_character.determine_damage(
+                random.choice(self.options), enemy_character.damage, enemy_character.damaging_effects)
+
+            if (enemy_character.is_alive() == False) and \
+                    (player_character.is_alive() == True):
                 game_loop = CHOOSING_PATH
                 clear_display()
                 print('Victory!')
@@ -40,3 +48,12 @@ class Battle:
                 enemy_character.display()
                 player_character.display_defeat()
                 return game_loop, player_character
+
+    def check_status_effects(self, status_effects):
+        # Slow
+        procced_effects = []
+        for effect in status_effects:
+            if effect['proc_chance'] > random.randint(1, 100):
+                print(effect['name'])
+                procced_effects.append(effect['name'])
+        return procced_effects
