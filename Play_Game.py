@@ -40,8 +40,15 @@ while(game_status != GAME_OVER):
     elif choice == 'i':
         # Inventory
         print('Current inventory: ')
-        for item in player_character.items:
+        for (index, item) in enumerate(player_character.items):
+            print(index + 1)
             item.display()
+        item_choice = input('Enter item to use:')
+        if item_choice.isnumeric():
+            item_to_use = player_character.items[int(item_choice)-1]
+            item_to_use.display()
+            if ('Cleanse' in item_to_use.effects):
+                player_character.status_effects = []
     elif choice == 'sg':
         # Save Game
         # Pickle player character
