@@ -47,6 +47,8 @@ while(game_status != GAME_OVER):
         if item_choice.isnumeric():
             item_to_use = player_character.items[int(item_choice)-1]
             item_to_use.display()
+            if ('Cleanse' in item_to_use.effects):
+                player_character.status_effects = []
     elif choice == 'sg':
         # Save Game
         # Pickle player character
