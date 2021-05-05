@@ -28,6 +28,8 @@ class Shopping:
                 print('Purchased!')
                 item.display()
                 player_character.items.insert(0, item)
+            else:
+                print('You cannot afford the selected item')
 
             if selection == 'n':
                 game_status == 1
