@@ -53,7 +53,7 @@ class Battle:
         # Slow
         procced_effects = []
         for effect in status_effects:
-            if effect['proc_chance'] > random.randint(1, 100):
-                print(effect['name'])
-                procced_effects.append(effect['name'])
+            if effect.proc_chance > random.randint(1, 100):
+                print(effect.name)
+                procced_effects.append(effect.name)
         return procced_effects

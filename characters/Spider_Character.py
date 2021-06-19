@@ -1,5 +1,5 @@
 import random
-from characters.Effects import SLOW
+from characters.Effect_List import SLOW
 
 
 class SpiderCharacter:
