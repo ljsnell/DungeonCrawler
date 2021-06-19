@@ -15,7 +15,6 @@ class HumanCharacter:
         self.exp = exp
         self.level = 1
         self.status_effects = []
-        self.damaging_effects = []
 
     def determine_damage(self, hit_location, damage, effects=[]):
         if hit_location == 'ra':
@@ -28,7 +27,7 @@ class HumanCharacter:
         # Determine if status effect is applied
         if len(effects) > 0:
             for effect in effects:
-                if (effect['hit_percent'] > random.randint(1, 100))\
+                if (effect.hit_percent > random.randint(1, 100))\
                         and (effect not in self.status_effects):
                     self.status_effects.append(effect)
 
